@@ -16,12 +16,28 @@ class personas_controller extends Controller
     {
         return Persona::find($id);
     }
-    public function insertar_personas(Request $datos)
+    public function insertar_persona(Request $datos)
     {
-        return Persona::insertar_personas($datos);
+        $persona = new Persona;
+        $persona->nombre = $datos->nombre;
+        $persona->telefono = $datos->telefono;
+        $persona->correo = $datos->correo;
+        $persona->save();
+        return "Insertado";
     }
     public function actualizar_persona(Request $datos)
     {
-        return Persona::actualizar_persona($datos);
+        $persona = Persona::find($datos->id);
+        $persona->nombre = $datos->nombre;
+        $persona->telefono = $datos->telefono;
+        $persona->correo = $datos->correo;
+        $persona->save();
+        return "Actualizado";
+    }
+
+    public function eliminar_persona($id)
+    {
+        Persona::find($id)->delete();
+        return "Eliminado";
     }
 }
