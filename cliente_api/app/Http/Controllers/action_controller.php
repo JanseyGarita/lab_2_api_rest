@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 class action_controller extends Controller
 {
 
-    var $url = 'http://localhost:8000/api/';//http://IP del otro pc:8080/lab_2/servidor_api/public/api/
+    //No sé como tiene configurado el locahost, lo dejaremos estándar
+    //http://IP del otro pc:8080/lab_2/servidor_api/public/api/
+    //Sería para acceder desde otra pc, se pasaa
+    var $url = 'http://localhost:8000/api/'; 
 
     public function obtener_personas()
     {
