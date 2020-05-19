@@ -38,7 +38,7 @@ class action_controller extends Controller
             'id' => $datos->id, 'nombre' => $datos->nombre, 'correo' => $datos->correo,
             'telefono' => $datos->telefono
         ]);
-        return view('personas', ['personas' => $this->obtener_json_personas()]);
+        return redirect('/')->with('personas', $this->obtener_json_personas());
     }
     public function eliminar_persona($id)
     {
