@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +12,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('personas');
-});
+Route::get('/', 'action_controller@obtener_personas');
+//obtener_persona
+Route::get('/persona/{id?}', 'action_controller@obtener_persona')->name('persona');
+
+Route::post('/insertar/', 'action_controller@insertar_persona')->name('insertar');
+Route::post('/actualizar/', 'action_controller@actualizar_persona')->name('actualizar');
+
+Route::get('/eliminar/{id?}', 'action_controller@eliminar_persona')->name('eliminar');

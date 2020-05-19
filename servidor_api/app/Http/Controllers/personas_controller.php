@@ -32,12 +32,11 @@ class personas_controller extends Controller
         $persona->telefono = ($datos->telefono != null) ? $datos->telefono : $persona->telefono;
         $persona->correo = ($datos->correo != null) ? $datos->correo : $persona->correo;
         $persona->save();
-        return "Actualizado";
+        return $persona;
     }
 
     public function eliminar_persona($id)
     {
-        Persona::find($id)->delete();
-        return "Eliminado";
+        return Persona::find($id)->delete();
     }
 }

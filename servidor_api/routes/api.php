@@ -24,4 +24,6 @@ Route::get('obtener_persona/{id?}','personas_controller@obtener_persona');
 
 Route::post('insertar_persona','personas_controller@insertar_persona');
 
-Route::put('actualizar_persona/{id?}','personas_controller@actualizar_persona');
+Route::post('actualizar_persona/{id?}','personas_controller@actualizar_persona');
+
+Route::get('eliminar_persona/{id?}','personas_controller@eliminar_persona');
